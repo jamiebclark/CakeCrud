@@ -148,7 +148,7 @@ const SUCCESS_CLASS = 'alert-success';
 
  		// If the result is not found, redirect to the referer
  		if (empty($result)) {
- 			$this->setMessage(sprintf('Could not find %s id #%s', $this->Model->alias, $id), self::ERROR_CLASS, true);
+ 			$this->setMessage(sprintf('Could not find %s id #%s', Inflector::humanize($this->Model->alias), $id), self::ERROR_CLASS, true);
  			debug(Debugger::trace());
  		}
 

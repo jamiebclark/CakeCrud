@@ -514,7 +514,7 @@ const SUCCESS_CLASS = 'alert-success';
 		if ($view !== false) {
 			if (empty($view) || $view === true) {
 				$view = DS . 'Elements' . DS . Inflector::tableize($this->modelClass) . DS . 'form';
-				if ($this->Model->plugin) {
+				if (!empty($this->Model->plugin)) {
 					$view = $this->Model->plugin . '.' . $view;
 				}
 			}

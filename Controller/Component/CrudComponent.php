@@ -143,6 +143,9 @@ const SUCCESS_CLASS = 'alert-success';
  * @return array|bool The value of the returned set if found, false if not;
  **/
  	public function read($id, $query = array()) {
+ 		if ($newQuery = $this->controllerMethod('_beforeCrudRead', array($query))) {
+ 			$query = $newQuery;
+ 		}
  		$query['conditions'][$this->Model->escapeField()] = $id;
  		$result = $this->Model->find('first', $query);
 
